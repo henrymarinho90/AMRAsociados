@@ -3,9 +3,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AMRAsociadosWeb": {
+    "mdb-angular-ui-kit-free": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,18 +20,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/amrasociados-web",
+            "outputPath": "dist/mdb-angular-ui-kit-free",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "AMRAsociadosWeb/node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -65,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AMRAsociadosWeb:build:production"
+              "browserTarget": "mdb-angular-ui-kit-free:build:production"
             },
             "development": {
-              "browserTarget": "AMRAsociadosWeb:build:development"
+              "browserTarget": "mdb-angular-ui-kit-free:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AMRAsociadosWeb:build"
+            "browserTarget": "mdb-angular-ui-kit-free:build"
           }
         },
         "test": {
@@ -86,20 +93,18 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "f6a00694-68af-4908-b4b2-f3338ab3f3a6"
   }
 }
